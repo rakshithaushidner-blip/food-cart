@@ -1,0 +1,53 @@
+.floating-cart {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.4);
+  cursor: pointer;
+  z-index: 300;
+  min-width: 320px;
+  max-width: 500px;
+  width: 90%;
+  animation: slideCartIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.floating-cart:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 12px 40px rgba(37,99,235,0.5);
+}
+
+@keyframes slideCartIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(30px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.floating-cart-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fc-count {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.fc-sep   { opacity: 0.4; }
+.fc-note  { font-size: 14px; font-weight: 500; opacity: 0.9; }
+
+.floating-cart-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fc-total { font-size: 16px; font-weight: 800; }
+.fc-arrow { font-size: 18px; font-weight: 700; }

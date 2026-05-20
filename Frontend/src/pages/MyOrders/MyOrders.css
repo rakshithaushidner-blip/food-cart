@@ -1,0 +1,179 @@
+.my-orders { margin: 40px 0 100px; }
+
+.orders-top {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.orders-top h2 { font-size: 24px; font-weight: 700; }
+.orders-count  { color: var(--text-light); font-size: 14px; }
+
+.orders-list { display: flex; flex-direction: column; gap: 20px; }
+
+.order-card {
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: fadeIn 0.3s;
+  transition: box-shadow 0.2s;
+}
+.order-card:hover { box-shadow: var(--shadow-md); }
+
+.order-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+}
+.order-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.order-icon img { width: 28px; }
+
+.order-header-info { flex: 1; }
+.order-items-list {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+.order-date { font-size: 12px; color: var(--text-light); }
+
+.order-amount-col { text-align: right; flex-shrink: 0; }
+.order-total { font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 6px; }
+
+.order-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.order-badge.paid   { background: #f0fdf4; color: var(--success); }
+.order-badge.unpaid { background: #fef2f2; color: #ef4444; }
+
+/* Progress */
+.order-progress {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 24px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+}
+
+.step-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: #fff;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.step.done .step-dot   { border-color: var(--primary); background: var(--primary); }
+.step.current .step-dot {
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+
+.step-line {
+  position: absolute;
+  top: 6px; left: 14px;
+  height: 2px;
+  width: calc(100% - 14px);
+  background: var(--border);
+  z-index: 0;
+  transition: background 0.3s;
+}
+.step.done .step-line { background: var(--primary); }
+
+.step-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-light);
+  white-space: nowrap;
+  margin-bottom: 16px;
+}
+.step.done    .step-label { color: var(--primary); }
+.step.current .step-label { color: var(--primary); font-weight: 700; }
+
+/* Footer */
+.order-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+.status-badge::before {
+  content: ''; width: 7px; height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.status-0 { background: #fff7ed; color: #ea580c; }
+.status-1 { background: #eff6ff; color: var(--primary); }
+.status-2 { background: #e0f2fe; color: #0284c7; }
+.status-3 { background: #f0fdf4; color: var(--success); }
+
+.reorder-btn {
+  padding: 8px 18px;
+  border: 1.5px solid var(--primary);
+  border-radius: 50px;
+  background: none;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.reorder-btn:hover { background: var(--primary); color: #fff; }
+
+/* Loading */
+.orders-loading {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; padding: 100px; color: var(--text-light);
+}
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.orders-empty {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  padding: 80px 20px; text-align: center;
+}
+.orders-empty h3 { font-size: 22px; font-weight: 700; }
+.orders-empty p  { color: var(--text-light); max-width: 300px; }

@@ -1,0 +1,166 @@
+.food-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: fadeIn 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Image */
+.food-card-img {
+  position: relative;
+  overflow: hidden;
+}
+.food-card-img img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.food-card:hover .food-card-img img { transform: scale(1.06); }
+
+/* Offer badge */
+.offer-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Cart controls */
+.cart-controls {
+  position: absolute;
+  bottom: 12px; right: 12px;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.5px;
+}
+.add-btn:hover { background: var(--primary-light); transform: scale(1.05); }
+.plus-icon { font-size: 16px; }
+
+.qty-pill {
+  display: flex;
+  align-items: center;
+  background: var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.qty-pill button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.qty-pill button:hover { background: var(--primary-dark); }
+.qty-pill span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Info */
+.food-card-info { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.card-top-row { display: flex; align-items: center; justify-content: space-between; }
+
+/* Veg/non-veg indicator */
+.type-dot {
+  width: 18px; height: 18px;
+  border-radius: 3px;
+  border: 2px solid;
+  display: flex; align-items: center; justify-content: center;
+}
+.type-dot.veg    { border-color: var(--veg); }
+.type-dot.nonveg { border-color: var(--nonveg); }
+.dot-inner {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.type-dot.veg    .dot-inner { background: var(--veg); }
+.type-dot.nonveg .dot-inner { background: var(--nonveg); }
+
+.rating-pill {
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.food-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food-card-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.food-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+.delivery-time { color: var(--text-mid); font-weight: 500; }
+.meta-sep      { color: var(--border); }
+.delivery-label { color: var(--success); font-weight: 600; }
+
+.food-card-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.food-card-price { font-size: 20px; font-weight: 800; color: var(--text-dark); }
+.price-label     { font-size: 12px; color: var(--text-light); }

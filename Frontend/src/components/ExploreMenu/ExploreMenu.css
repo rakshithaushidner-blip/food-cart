@@ -1,0 +1,89 @@
+.explore-menu { margin: 28px 0 0; }
+
+.explore-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.explore-subtitle {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+.scroll-arrows { display: flex; gap: 8px; }
+.scroll-arrows button {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-mid);
+  transition: border-color 0.2s, color 0.2s;
+}
+.scroll-arrows button:hover { border-color: var(--primary); color: var(--primary); }
+
+.explore-menu-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.explore-menu-list::-webkit-scrollbar { display: none; }
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.2s;
+}
+.menu-item:hover { transform: translateY(-3px); }
+
+.menu-img-wrap {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--border);
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.menu-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.menu-item:hover .menu-img-wrap img { transform: scale(1.08); }
+
+.all-icon { font-size: 38px; background: var(--primary-light); }
+
+.menu-item.active .menu-img-wrap {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.menu-item p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-align: center;
+  transition: color 0.2s;
+}
+.menu-item.active p { color: var(--primary); }
+
+.explore-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0 0;
+}
